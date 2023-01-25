@@ -30,12 +30,10 @@ class Details():
             print("ok")
 
     def __str__(self):
-                """ strings returning to terminal"""
-
-                """ data received from detail_for_user return statement"""
+        """ strings returning to terminaldata received from detail_for_user return statement"""
         info = self.detail_for_user()
         if info:
-        return f"System name = {info.sysname}\n"\
+            return f"System name = {info.sysname}\n"\
             f"Node name: {info.nodename}\n" \
             f"Release: {info.release}\n" \
             f"Version: {info.version}\n" \
@@ -44,7 +42,7 @@ class Details():
             return "System info is not provided"
 
 class Update():
-            """ update script"""
+    """ update script"""
 
     def __init__(self):
         self.user_input_update = input(
@@ -55,7 +53,7 @@ class Update():
             class SystemUpdater:
                 self.dist = distro.id()
                 if self.dist in ("ubuntu", "debian"):
-                    elf.package_manager = "apt"
+                    self.package_manager = "apt"
                 elif self.dist in ("centos", "fedora", "rhel"):
                     self.package_manager = "yum"
                 elif self.dist in ("arch"):
@@ -85,7 +83,7 @@ class Update():
             os.system("sudo pacman -Syu")
 
 class Flatpak():
-            """ flatpak script """
+    """ flatpak script """
 
     def __init__(self):
         pass
